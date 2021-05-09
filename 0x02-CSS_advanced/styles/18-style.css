@@ -90,34 +90,7 @@ a:active {
 }
 
 
-.navbar-menu {
-    float: right;
-}
 
-.nav {
-    margin: 0;
-    padding: 0;
-    list-style-type: none;
-    text-align: center;
-}
-
-.nav-item.nav {
-    font-family: var(--nav-item-font-family);
-    font-weight: var(--nav-item-font-weight);
-    font-size: var(--nav-item-font-size);
-    word-spacing: var(--nav-item-letter-spacing);
-    display: var(--nav-item-display);
-    margin: var(--nav-item-margin);
-}
-
-.nav-link .nav {
-    display: block;
-    padding: 0.5rem 1rem 0.5rem 1rem;
-}
-
-.nav-link .nav:hover {
-    color: var(--nav-item-link-hover);
-}
 
 .section {
     padding: var(--section-padding);
@@ -161,4 +134,33 @@ a:active {
 
 .footer {
     padding: var(--footer-padding);
+}
+
+.navbar-menu {
+    float: right;
+}
+
+.nav {
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+    text-align: center;
+}
+
+.nav .nav-item{
+    font-family: var(--nav-item-font-family);
+    font-weight: var(--nav-item-font-weight);
+    font-size: var(--nav-item-font-size);
+    word-spacing: var(--nav-item-letter-spacing);
+    display: var(--nav-item-display);
+    margin: var(--nav-item-margin);
+}
+
+.nav .nav-link{
+    display: block;
+    padding: 0.5rem 1rem 0.5rem 1rem;
+}
+
+.nav-link .nav:hover {
+    color: var(--nav-item-link-hover);
 }
