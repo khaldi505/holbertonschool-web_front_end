@@ -167,11 +167,6 @@
   
   /* Helpers
       ============================= */
-    main img {
-      width: 100%;
-      height: auto;
-    }
-  
   
   .visually-hidden:not(:focus):not(:active) {
     position: absolute !important;
@@ -181,7 +176,10 @@
     clip: rect(1px, 1px, 1px, 1px);
     white-space: nowrap;
   }
-  
+  main img {
+    width: 100%;
+    height: auto;
+  }
   /*** 2. LAYOUT ***/
   
   /* Layout
@@ -195,16 +193,6 @@
   
   /* Grid
       ============================= */
-    @media only screen and (max-width: 767px) {
-      :root {
-      --section-padding: 5rem 1.5rem;
-      --section-body-padding: 2rem 0 0;
-      }
-      ul.row, row {flex-direction: column;margin: 0;}
-      [class^="col-"] {margin: 0 0 3rem 0;}
-      .col-1-3, .col-1-2 {width: 100%}
-      
-    }
   ul.row {
     margin: -1rem;
     padding: 0;
@@ -225,6 +213,16 @@
   
   .col-1-2 {
     width: calc((100% / 2) - 2rem);
+  @media only screen and (max-width: 767px) {
+    :root {
+    --section-padding: 5rem 1.5rem;
+    --section-body-padding: 2rem 0 0;
+    }
+    ul.row, row {flex-direction: column;margin: 0;}
+    [class*='col-'] {margin: 0 0 3rem 0;}
+    .col-1-3, .col-1-2 {width: 100%}
+    
+  }
   }
   
   /* Navbar
@@ -414,23 +412,23 @@
   }
   /* Section Latest news
       ============================= */
-    @media only screen and (max-width: 767px) {
-     .section-latest-news .row {
-       flex-direction: column;
-       margin: 0;
-     }
-    }
 
   .section-latest-news .row {
     flex-direction: row-reverse;
   }
-  
+
+  @media only screen and (max-width: 767px) {
+    .section-latest-news .row {
+      flex-direction: column;
+    }
+   }
   /* Section SERVICES
       ============================= */
   
   .section-services .row {
     flex-wrap: wrap;
   }
+
   
   /* Section ABOUT US
       ============================= */
