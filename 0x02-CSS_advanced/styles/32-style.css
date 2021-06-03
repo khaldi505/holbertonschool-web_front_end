@@ -14,6 +14,7 @@
     --button-hover-background: var(--color-primary);
     --color-primary: #d73953;
     --color-black: #090909;
+    --transition-duration: 0.3s;
     --color-white: #ffffff;
     --color-light-grey: #f3f3f3;
     --color-dark-grey: #353535;
@@ -112,6 +113,8 @@ a:active {
    color: var(--button-hover-color);
    text-decoration: var(--button-hover-text-decoration);
     background-color: var(--button-hover-background);
+    transition-duration: var(--transition-duration);
+	transition-property: color, background-color;
 }
 
 
