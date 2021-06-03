@@ -313,8 +313,8 @@ ul.row {
     left: var(--header-logo-link-left);
 }
 
-.nav nav-link {
-    content: "";
+.nav nav-link:before {
+    content: empty;
     position: absolute;
     top: 0;
     left: 0;
