@@ -1,0 +1,12 @@
+$header-font: 16px;
+$smaller-header: 12px;
+$regular-font: 14px;
+
+body {
+    font-size: $regular-font; 
+     & h1 {
+      font-size: $header-font; 
+        &.smaller {
+            font-size: $smaller-header; }
+    }
+}
