@@ -592,33 +592,33 @@
     display: block;
     }
 
-    .post-meta-list [class ^="post-meta-"] {
-        margin-bottom: 1rem;
-        padding-bottom: 1rem;
-        border-bottom: 0.2rem solid var(--color-light-grey);
+    .post-meta-list [class*="post-meta-"] {
+      margin-bottom: 1rem;
+      padding-bottom: 1rem;
+      border-bottom: 0.2rem solid var(--color-light-grey);
     }
-
-    .post-meta-list .post-meta {
-        border: none;
-        margin-bottom: 3rem;
+  
+    .post-meta-list [class*="post-meta"]:last-child {
+      border: none;
+      margin-bottom: 3rem;
     }
-
+  
     /* Tag list
-    ============================= */
-
+      ============================= */
+  
     .tag-list {
-    padding: 0;
-    list-style: none;
+      padding: 0;
+      list-style: none;
     }
-
+  
     .tag-list li {
-        display: inline;
+      display: inline;
     }
-
+  
     .tag-list li::after {
-        content: ", ";
+      content: ", ";
     }
-
+  
     .tag-list li:last-child::after {
-        content: "";
+      content: "";
     }
