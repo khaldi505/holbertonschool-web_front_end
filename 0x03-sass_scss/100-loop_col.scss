@@ -1,0 +1,7 @@
+
+
+@for $i from 1 to 5 {
+    .col-#{$i}{
+        $res: ((100/$i)) * 1%;
+        width: $res;}
+}
