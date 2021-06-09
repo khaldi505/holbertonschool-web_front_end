@@ -733,7 +733,18 @@ textarea:focus {
 
 /* Form field
 ============================= */
+.form-field-container {
+position: relative;
+}
 
+.form-field-icon {
+font-style: normal;
+}
+
+
+
+/* Form help
+============================= */
 .form-group .form-help {
   margin: 0;
   line-height: 1.3;
