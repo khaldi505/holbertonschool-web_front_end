@@ -1,0 +1,41 @@
+:root {
+    --primary: #E0003C;
+    --secondary: #BC1340;
+    --light: #8C8C8C;
+
+}
+
+.btn-primary {
+    background-color: var(--primary);
+}
+
+.btn-primary:focus, .btn-primary:hover, .btn-primary:active {
+    background-color: var(--secondary);
+}
+
+
+.btn-outline-primary {
+    border-color: var(--primary);
+    color: var(--primary);
+}
+
+a:focus, a:hover , a {
+    color: var(--primary);
+}
+
+
+.card-header, .card-footer {
+    color: var(--primary);
+    background-color: var(--primary);
+
+    
+}
+
+.card {
+    border-color: var(--primary);
+    border-radius: 0.5rem;
+}
+
+.text-muted {
+    color: var(--light);
+}
