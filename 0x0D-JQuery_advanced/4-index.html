@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+    <head>
+        <script
+            src="https://code.jquery.com/jquery-3.6.0.slim.min.js"
+            integrity="sha256-u7e5khyithlIdTpu22PHhENmPcRdFiHRjhAuHcs05RI="
+            crossorigin="anonymous">
+        </script>
+        <script>
+            // when i truly learn js, i'll regret writing this code until then a men gotta do what a men gotta do 
+            function createFamilyTree(){     
+                let table = document.createElement("table");
+                let HtableRow = document.createElement("tr");
+                let FtableRow = document.createElement("tr");
+                let StableRow = document.createElement("tr");
+                let ThtableRow = document.createElement("tr");
+                let firstName = $("<th>").text("Firstname");
+                let lastName = $("<th>").text("Lastname");
+                let Gu = $("<td>").text("Guillaume");
+                let Pa = $("<td>").text("Paulette");
+                let An = $("<td>").text("Antoine");
+                let tbody = document.createElement("tbody");
+                $("body").append(table);
+                $("table").append(HtableRow);
+                $("table").append(tbody)
+                $("tbody").append(FtableRow);
+                $("tbody").append(StableRow);
+                $("tbody").append(ThtableRow);
+                $(HtableRow).append(firstName, lastName);
+                $(FtableRow).append(Gu, $("<td>").text("Salva"));
+                $(StableRow).append(Pa, $("<td>").text("Salva"));
+                $(ThtableRow).append(An, $("<td>").text("Salva"));
+            };
+            // replace is fun to do
+
+            function replaceFamilyTree(){$("tbody").html("<tr><td>Gerard</td> <td>Bonissa</td></tr>")};
+        </script>
+        <meta charset="utf-8" />
+        <title>Task 1</title>
+
+    </head>
+
+    <body>
+        <script>$( document ).ready(function() { createFamilyTree()});</script>
+        <script>$( document ).ready(function() { replaceFamilyTree()});</script>
+    </body>
+
+</html>
