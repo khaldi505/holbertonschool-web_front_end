@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+    <head>
+        <script
+            src="https://code.jquery.com/jquery-3.6.0.slim.min.js"
+            integrity="sha256-u7e5khyithlIdTpu22PHhENmPcRdFiHRjhAuHcs05RI="
+            crossorigin="anonymous">
+        </script>
+        <script>
+            function createFamilyTree(){
+                let table = document.createElement("table");
+                let tHead = document.createElement("thead");
+                let tRow  = document.createElement("tr");
+                let Firstname = document.createElement("th");
+                
+                let lastName = document.createElement("th");
+                let tableBody = document.createElement("tbody");
+                Firstname = $(Firstname).text("Firstname")
+                lastName = $(lastName).text("Lastname")
+                
+                $("body").append(table);
+                $(table).append(tHead);
+                $(tHead).append(tRow);
+                $(tRow).append(Firstname, lastName);
+                $(table).append(tableBody);
+            };
+            function addNewMember(firstName, lastName){
+                firstName = $("<td>").text(firstName);
+                lastName = $("<td>").text(lastName);
+                let tRow  = document.createElement("tr");
+                $("tbody").append(tRow);
+                x = $("<td>").text("(x)");
+                $(tRow).append(firstName, lastName, x);
+                $(x).css( "background-color", "orange" )
+                $(x).click(function(){
+                    $(tRow).remove();
+                })
+            };
+        </script>
+        <meta charset="utf-8" />
+        <title>Task 5</title>
+    </head>
+
+    <body>
+        <script>createFamilyTree()</script>
+        <script>addNewMember("Guillaume", "Salva")
+        addNewMember("Arielle", "Snizt")
+        addNewMember("Fanette", "Snizt")
+        addNewMember("Gerard", "Snizt")
+        addNewMember("Victor", "le Salva")</script>
+    </body>
+
+</html>
