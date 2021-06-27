@@ -46,7 +46,7 @@
             };
             function createForm(){
 
-                let Finput = $("<input type='text'>").first()
+                let Finput = $("<input type='text'>")
                 let Sinput = $("<input type='text'>")
                 $("table").before(Finput, Sinput);
                 let select = $("<select><option value='before'>Before</option><option value='after'>After</option></select>");
@@ -54,7 +54,7 @@
                 let submit = $('<input type="submit" value="Submit">')
                 $(select).after(submit);
                 $(submit).click(function(){
-                    addNewMember(Finput.val(), Sinput.val(), select.val());
+                    addNewMember($("input").first().val(), $("input:nth-of-type(2)").val(), select.val());
                 })
 
 
