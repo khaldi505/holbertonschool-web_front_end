@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+    <head>
+        <script
+        src="https://code.jquery.com/jquery-3.6.0.min.js"
+        integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
+        crossorigin="anonymous"></script>
+        <script>            
+            function createSearchForm(){
+                let search = $("<input type='text'>")
+                let submit = $("<input type=submit>")
+                let Ulist  = document.createElement("ul")
+
+                $("body").append(search, submit);
+                $(submit).click(function(){
+                    queryWikipedia($("input").first().val())
+                });
+                $("body").append(Ulist);
+            };
+
+            function addNewArticle(id, title, snippet)
+		{
+            let $list = $('<li></li>');
+            $list.html(`
+                <p><span>${id} - </span><b>${title}</b></p>
+                <p>${snippet}</p>
+            `);
+            $('ul').append($list);
+        }
+            function queryWikipedia(search){                
+                $.ajax( 
+                {type: "GET", url: "https://en.wikipedia.org/w/api.php" + '?origin=*',
+                dataType: 'json',
+                data: {
+                    action: "query",
+                    list: "search",
+                    srsearch: search,
+                    format: "json"
+                    }})
+                    .done(function(result) {
+                    $.each(result.query.search, function( index, result ){
+                        addNewArticle(result.pageid, result.title, result.snippet)
+                    });
+                })
+            };
+        </script>
+        <meta charset="utf-8" />
+        <title>Task 5</title>
+    </head>
+    <body>
+        <script>createSearchForm()</script>
+    </body>
+</html>
