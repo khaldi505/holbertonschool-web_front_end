@@ -68,7 +68,7 @@
             }
             if (!getCookie("firstname") == "" && !getCookie("email") == ""){
                 hideForm()
-                document.getElementsByTagName('body')[0].innerHTML = "<h1>Welcome " + getCookie("firstname") +"</h1>"
+                document.getElementsByTagName('body')[0].innerHTML = "<h1>Welcome " + getCookie("firstname") + `<a onclick="deleteCookiesAndShowForm()">  (logout)</a>` +"</h1>"
             }
         }
     </script>
@@ -85,6 +85,5 @@
         
         <script>showWelcomeMessageOrForm()</script>
     </div>
-    <a onclick="deleteCookiesAndShowForm()">(logout)</a>
 </body>
 </html>
