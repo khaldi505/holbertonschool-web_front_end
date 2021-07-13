@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.jsdelivr.net/npm/js-cookie@rc/dist/js.cookie.min.js"></script>
+
+</head>
+<body>
+    <div>
+        <form action="">
+            <h2>Login to the website</h2>
+            <input type="text" id="firstname" placeholder="firstname">
+            <input type="text" id="email" placeholder="email">
+            <button>Log me in</button>
+            
+        </form>
+    </div>
+</body>
+<script>
+
+
+
+
+    function setCookies(){
+        let firstname = document.getElementById("firstname").value
+        let email = document.getElementById("email").value
+        Cookies.set("firstname", firstname);
+        Cookies.set("email", email);
+        let date = new Date();
+        date.setTime(date.getTime()+(864000 * 1000));
+        Cookies.set("expires", date.toUTCString());
+        
+        
+    };
+
+
+
+
+    function showCookies(){
+        let p = document.createElement("p");
+        p.innerHTML = "Email: " + Cookies.get("email") + " - Firstname: " + Cookies.get("firstname");
+        document.body.appendChild(p);
+    };
+
+
+    function showForm(){
+        wlcmMessage = document.getElementsByTagName("h1")[0];
+        if (wlcmMessage != undefined){wlcmMessage.remove();}
+        document.getElementsByTagName('body')[0].innerHTML = `<form><h2>Login to the website</h2><input type="text" id="firstname" placeholder="firstname"><input type="text" id="email" placeholder="email"><button onclick="setCookies()">Log me in</button> </form>`
+    };
+    function hideForm(){
+        form = document.getElementsByTagName("form");
+        form[0].style.display = 'none';
+    }
+
+
+    function showWelcomeMessageOrForm(){
+        if (Cookies.get("firstname") != undefined && Cookies.get("email") != undefined){
+            hideForm()
+            document.getElementsByTagName('body')[0].innerHTML = "<h1>Welcome " + Cookies.get("firstname") + `<a onclick="Cookies.remove('firstname');Cookies.remove('email'); showForm()">  (logout)</a>` +"</h1>"
+
+        }
+        else{
+            showForm()
+        }
+    }
+    function setCookiesAndShowWelcomeMessage(){
+        let btn = document.getElementsByTagName("button");
+        btn.onclick = () => setCookies();
+        showWelcomeMessageOrForm();
+    }
+    setCookiesAndShowWelcomeMessage();
+</script>
+</html>
