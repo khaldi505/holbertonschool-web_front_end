@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>task 5</title>
+</head>
+<body>
+    
+</body>
+
+<script>
+let availableItems = ["Shampoo", "Soap", "Sponge", "Water"];
+if (typeof sessionStorage !== 'undefined') {
+    createStore();
+    displayCart();
+} else {
+    alert("Sorry, your browser does not support Web storage. Try again with a better one")
+}
+
+function addItemToCart(item){
+    sessionStorage[item] = true;
+}
+
+function createStore(){
+    ul = document.createElement("ul");
+    li = document.createElement("li");
+    document.body.appendChild(ul);
+    for (let i = 0; i < availableItems.length; i){
+        li.innerHTML = `<a onclick="addItemToCart(availableItems[i]);">` + availableItems[i] + `</a>`;
+        ul.append(li);
+    }
+    document.body.append(ul);
+}
+
+function displayCart() {
+            if (sessionStorage.length) {
+                let p = document.createElement('p');
+                p.innerHTML = `You previously had ${sessionStorage.length} items in your cart`;
+                document.body.append(p);
+            }
+        }
+</script>
+</html>
